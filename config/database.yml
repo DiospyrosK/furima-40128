@@ -5,7 +5,7 @@ default: &default
 development:
   <<: *default
   adapter: mysql2
-  username: room
+  username: root
   password:
   host: localhost
   databese: furima-40128_development
