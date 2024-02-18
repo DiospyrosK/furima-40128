@@ -11,5 +11,7 @@ class Item < ApplicationRecord
     validates :price
   end
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category, :condition, :shipping_area, :shipping_price, :shipping_date
   belongs_to :user
 end
