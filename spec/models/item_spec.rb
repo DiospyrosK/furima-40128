@@ -45,52 +45,52 @@ RSpec.describe Item, type: :model do
       it 'category_idが空では出品できない' do
         @item.category_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank", "Category is not a number")
+        expect(@item.errors.full_messages).to include("Category can't be blank", 'Category is not a number')
       end
       it 'category_idが1では出品できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it 'condition_idが空では出品できない' do
         @item.condition_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition can't be blank", "Condition is not a number")
+        expect(@item.errors.full_messages).to include("Condition can't be blank", 'Condition is not a number')
       end
       it 'condition_idが1では出品できない' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition must be other than 1")
+        expect(@item.errors.full_messages).to include('Condition must be other than 1')
       end
       it 'shipping_price_idが空では出品できない' do
         @item.shipping_price_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping price can't be blank", "Shipping price is not a number")
+        expect(@item.errors.full_messages).to include("Shipping price can't be blank", 'Shipping price is not a number')
       end
       it 'shipping_price_idが1では出品できない' do
         @item.shipping_price_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping price must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping price must be other than 1')
       end
       it 'shipping_area_idが空では出品できない' do
         @item.shipping_area_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping area can't be blank", "Shipping area is not a number")
+        expect(@item.errors.full_messages).to include("Shipping area can't be blank", 'Shipping area is not a number')
       end
       it 'shipping_area_idが1では出品できない' do
         @item.shipping_area_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping area must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping area must be other than 1')
       end
       it 'shipping_date_idが空では出品できない' do
         @item.shipping_date_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping date can't be blank", "Shipping date is not a number")
+        expect(@item.errors.full_messages).to include("Shipping date can't be blank", 'Shipping date is not a number')
       end
       it 'shipping_date_idが1では出品できない' do
         @item.shipping_date_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping date must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping date must be other than 1')
       end
       it 'priceが空では出品できない' do
         @item.price = ''
@@ -100,12 +100,12 @@ RSpec.describe Item, type: :model do
       it 'priceが300円未満だと出品できない' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be in 300..9999999")
+        expect(@item.errors.full_messages).to include('Price must be in 300..9999999')
       end
       it 'priceが9999999円を超えると出品できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be in 300..9999999")
+        expect(@item.errors.full_messages).to include('Price must be in 300..9999999')
       end
     end
   end
