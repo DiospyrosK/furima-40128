@@ -8,7 +8,7 @@ class Item < ApplicationRecord
     validates :shipping_price_id
     validates :shipping_area_id
     validates :shipping_date_id
-    validates :price, numericality: { in: 300..9_999_999 }
+    validates :price, numericality: { only_integer: true, in: 300..9_999_999 }
   end
 
   with_options numericality: { other_than: 1 } do
