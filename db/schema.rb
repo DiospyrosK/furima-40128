@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_13_182850) do
   create_table "destinations", charset: "utf8", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.string "post_code", null: false
-    t.integer "prefecture_id", null: false
+    t.integer "shipping_area_id", null: false
     t.string "city", null: false
     t.string "street_address", null: false
     t.string "building"

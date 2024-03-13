@@ -3,7 +3,7 @@ class CreateDestinations < ActiveRecord::Migration[7.0]
     create_table :destinations do |t|
       t.references :order,          null: false, foreign_key: true
       t.string     :post_code,      null: false
-      t.integer    :prefecture_id,  null: false
+      t.integer    :shipping_area_id,  null: false
       t.string     :city,           null: false
       t.string     :street_address, null: false
       t.string     :building
