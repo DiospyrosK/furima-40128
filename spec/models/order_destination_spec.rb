@@ -6,7 +6,6 @@ RSpec.describe OrderDestination, type: :model do
   end
 
   describe '配送先情報の保存' do
-
     context '内容に問題ない場合' do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@order_destination).to be_valid
@@ -68,7 +67,7 @@ RSpec.describe OrderDestination, type: :model do
       it 'post_codeが半角数字のハイフンを含んだ正しい形式でないと保存できないこと' do
         @order_destination.post_code = '1234567'
         @order_destination.valid?
-        expect(@order_destination.errors.full_messages).to include("Post code is invalid. Include hyphen(-)")
+        expect(@order_destination.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
       it 'shipping_area_idを選択していないと保存できないこと' do
         @order_destination.shipping_area_id = 1
@@ -98,17 +97,17 @@ RSpec.describe OrderDestination, type: :model do
       it 'phone_numberが半角数字でないと保存できないこと' do
         @order_destination.phone_number = '０８０１２３４５６７８'
         @order_destination.valid?
-        expect(@order_destination.errors.full_messages).to include("Phone number is invalid")
+        expect(@order_destination.errors.full_messages).to include('Phone number is invalid')
       end
       it 'phone_numberが10文字か、11文字でないと保存できないこと' do
         @order_destination.phone_number = '080123456789'
         @order_destination.valid?
-        expect(@order_destination.errors.full_messages).to include("Phone number is invalid")
+        expect(@order_destination.errors.full_messages).to include('Phone number is invalid')
       end
       it 'phone_numberにハイフンがあると保存できないこと' do
         @order_destination.phone_number = '080-1234-5678'
         @order_destination.valid?
-        expect(@order_destination.errors.full_messages).to include("Phone number is invalid")
+        expect(@order_destination.errors.full_messages).to include('Phone number is invalid')
       end
       it 'tokenが空では保存できないこと' do
         @order_destination.token = ''
